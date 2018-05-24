@@ -36,17 +36,12 @@
     accessToken: 'pk.eyJ1IjoiY2Rvd2V5IiwiYSI6ImNqaGpmNjFycDJmbzYzYW8xcm1pNWRvMGUifQ.496emA4wqEaVycnlZgLw0Q'
 }).addTo(map);
    
-   //Load GeoJSON of Towns
-   var towns = $.ajax({
-          url:"/VT_Boundaries__town_polygons.geojson",
-          dataType: "json",
-          success: console.log("County data successfully loaded."),
-          error: function (xhr) {
-            alert(xhr.statusText)
-          }
-        })
-   
-   L.geoJSON(towns.responseJSON).addTo(map);
+  
+  // load GeoJSON from an external file
+  $.getJSON("rodents.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
       
       
    </script>
