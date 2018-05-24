@@ -29,7 +29,7 @@
 
    // load a tile layer
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, <a href="http://geodata.vermont.gov/">VCGI</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: 'Map data &copy; <a href="http://geodata.vermont.gov/">VCGI</a>, <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiY2Rvd2V5IiwiYSI6ImNqaGpmNjFycDJmbzYzYW8xcm1pNWRvMGUifQ.496emA4wqEaVycnlZgLw0Q'
@@ -39,7 +39,7 @@
    //var geojsonLayer = new L.GeoJSON.AJAX("VT_Boundaries__town_polygons.geojson");       
    //geojsonLayer.addTo(map);
    // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
-   $.getJSON("VT_Boundaries__town_polygons.geojson",function(data){
+   L.getJSON("VT_Boundaries__town_polygons.geojson",function(data){
    // L.geoJson function is used to parse geojson file and load on to map
    L.geoJson(data).addTo(Map);
    });
