@@ -44,9 +44,9 @@
   });
       
   // load GeoJSON from an external file
-  $.getJSON("VT_Towns_Pubs_Points.geojson",function(data2){
+  $.getJSON("VT_Towns_Pubs_Points.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data2).addTo(map);
+    L.geoJson(data).addTo(map);
   });
       
       
