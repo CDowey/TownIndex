@@ -43,13 +43,14 @@
     // add GeoJSON layer to the map once the file is loaded
     L.geoJson(data).addTo(map);
   });
-      
  
- $.getJSON("VT_Towns_Pubs_Points.geojson",function(data){
+
+// $.getJSON("VT_Towns_Pubs_Points.geojson",function(data){
  // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-  });
- 
+//    L.geoJson(data).addTo(map);
+//  });
+
+    
   L.geoJson("VT_Towns_Pubs.geojson", {
   onEachFeature: function(feature, layer) {
     var label = L.marker(layer.getBounds().getCenter(), {
