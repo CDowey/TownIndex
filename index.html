@@ -51,17 +51,17 @@
 //  });
 
     
-//  L.geoJson("VT_Towns_Pubs.geojson", {
-//  onEachFeature: function(feature, layer) {
-//    var label = L.marker(layer.getBounds().getCenter(), {
- //     icon: L.divIcon({
- //       className: 'label',
-  //      html: feature.properties.NAME,
-  //      iconSize: [100, 40]
-// })
- //   }).addTo(map);
-//  }
-//);
+ L.geoJson("VT_Towns_Pubs.geojson", {
+ onEachFeature: function(feature, layer) {
+   var label = L.marker(layer.getBounds().getCenter(), {
+      icon: L.divIcon({
+        className: 'label',
+        html: feature.properties.TOWNNAMEMC,
+        iconSize: [100, 40]
+ })
+    }).addTo(map);
+  }
+);
       
       
    </script>
