@@ -40,8 +40,12 @@
   
   // load GeoJSON from an external file
   $.getJSON("VT_Towns_Pubs.geojson",function(data){
+     onEachFeature: function (feature, layer) {
+        layer.bindTooltip(feature.properties.TOWNNAMEMC);
+    }
     // add GeoJSON layer to the map once the file is loaded
     L.geoJson(data).addTo(map);
+     
   });
  
 
@@ -50,18 +54,6 @@
 //    L.geoJson(data).addTo(map);
 //  });
 
-    
- L.geoJson("VT_Towns_Pubs.geojson", {
- onEachFeature: function(feature, layer) {
-   var label = L.marker(layer.getBounds().getCenter(), {
-      icon: L.divIcon({
-        className: 'label',
-        html: feature.properties.TOWNNAMEMC,
-        iconSize: [100, 40]
- })
-    }).addTo(map);
-  }
-);
       
       
    </script>
